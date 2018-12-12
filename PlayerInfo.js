@@ -19,7 +19,7 @@ var PlayerInfo = function(pOrder, playerId, location, alcohol) {
     return this.pOrder;
   }
 
-  this.setLocation = function (curLocation) {
+  this.setLocation = function setLocation(curLocation) {
     this.location = curLocation;
   }
 
@@ -27,9 +27,4 @@ var PlayerInfo = function(pOrder, playerId, location, alcohol) {
     return this.location;
   }
 
-  this.movePlayer = function (diceNum) {
-    this.setLocation(this.getLocation()+diceNum)
-    Punishment.showCurPunish(this.getLocation);
-    this.Player.nextPlayer();
-  }
 }

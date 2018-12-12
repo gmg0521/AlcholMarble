@@ -56,18 +56,22 @@ var Player = new (function()
     }
 
     this.nextPlayer = function () {
+      
       if(this.curPlayerIndex == 3)
         this.curPlayerIndex = 0;
       else
         this.curPlayerIndex++;
 
-      this.startGame();
     }
 
     this.startGame = function () {
       console.log("현재 플레이어 : " + this.playerObjList[this.curPlayerIndex].getPlayerId());
       console.log("주사위를 굴립니다.");
-      console.log("나온 수 :" + Dice.rollDice());
+      var diceNumber = Dice.rollDice();
+      console.log("나온 수 :" + diceNumber);
+      console.log("플레이어를 이동합니다");
+      playerMove(diceNumber);
+      this.nextPlayer();
     }
 
 });
