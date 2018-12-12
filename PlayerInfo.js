@@ -1,5 +1,5 @@
 // 플레이어의 정보를 다루는 PlayerInfo객체
-var PlayerInfo = function(pOrder, playerId,) {
+var PlayerInfo = function(pOrder, playerId) {
   var _this =  this;
 
   // 플레이어 ID
@@ -9,7 +9,7 @@ var PlayerInfo = function(pOrder, playerId,) {
 
   this.location = 1;
 
-  this.alcohol = 0 + "%"";
+  this.alcohol = 0 + "%";
 
   this.punishmentList = [];
 
