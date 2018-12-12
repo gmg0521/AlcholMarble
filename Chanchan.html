@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>원 다이스</title>
+</head>
+
+<body>
+  <h1>굴려라 주사위와 술농도 ㅎㅎ <br><br>
+      <button onclick="oneDice()" type="button" name="button">굴리기</button>
+      <button onclick="bloodAlcohlConcentration()" type="button" name="button">당신이 이만큼 드셨어유 </button>
+
+
+      <script type="text/javascript">
+        function oneDice(){
+
+          var randomNumber =Math.floor(Math.random()*6)+1;
+
+          if( randomNumber == 1){
+            console.log("1번이나왔어유~");
+          }else if (randomNumber == 2) {
+            console.log("2번이나왔어유~");
+          }
+          else if (randomNumber == 3) {
+            console.log("3번이나왔어유~");
+          }
+            else if (randomNumber == 4) {
+              console.log("4번이나왔어유~");
+            }
+              else if (randomNumber == 5) {
+                console.log("5번이나왔어유~");
+        }
+        else if (randomNumber == 6) {
+          console.log("6번이나왔어유~야호~");
+        }
+      }
+
+      function bloodAlcohlConcentration(){
+        var soju
+        var beer
+        var amountAch;
+        var sojuCon = 0.0019;
+        var beerCon = 0.0045;
+        var achLq = 0.7894
+        var bodyab =0.7;
+        var sexcon = 6.2;
+        var weight = 62;
+        var bloodinAch
+
+        if (==soju){
+          amountAch * sojuCon *achLq * bodyab / weight * sexcon = bloodinAch
+
+        }
+        elseif(==beer) {
+            amountAch * beerCon *achLq * bodyab / weight * sexcon = bloodinAch
+
+        }
+      }
+      </script>
+  </body>
+</html>
