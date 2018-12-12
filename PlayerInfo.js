@@ -1,3 +1,4 @@
+// 플레이어의 정보를 다루는 PlayerInfo객체
 var PlayerInfo = function(pOrder, playerId,) {
   var _this =  this;
 
@@ -9,6 +10,8 @@ var PlayerInfo = function(pOrder, playerId,) {
   this.location = 1;
 
   this.alcohol = 0 + "%"";
+
+  this.punishmentList = [];
 
   this.getPlayerId = function ()
   {
