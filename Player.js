@@ -7,7 +7,7 @@ var Player = new (function()
     this.playerNum = 0;
 
     // 플레이어의 객체
-    this.playerObjList = {};
+    this.playerObjList = [];
 
     // 플레이어의 게임 순서
     this.playerList = [];
@@ -27,14 +27,15 @@ var Player = new (function()
     this.init = function()
     {
       console.log("플레이어의 정보를 셋팅 합니다.");
-      console.log("참여 플레이어의 수를 입력하시려면 setPlayerNum(2~4)를 입력하세요.");
+      console.log("참여 플레이어의 수는 4명");
+      this.setPlayer(4);
     }
 
     this.setPlayer = function (playerNum)
     {
       console.log("플레이어의 수를 " + playerNum + "으로 설정합니다.");
       this.playerNum = playerNum;
-      console.log("플레이어들의 컨트롤 객체를 추가합니다.");
+      console.log("플레이어의 순서를 정합니다.");
       for (var i = 1; i <= this.playerNum; i++) {
         this.playerList.push(i);
       }
@@ -42,14 +43,16 @@ var Player = new (function()
       console.log(this.playerList);
 
       console.log("플레이어의 객체를 초기화 합니다");
-      for (var pOrder = 1; i < this.playerNum; pOrder++) {
+      for (var pOrder = 1; pOrder < this.playerNum+1; pOrder++) {
         this.addPlayer(pOrder, this.playerList[pOrder-1]);
         }
+        console.log("게임을 시작합니다!");
+        this.startGame();
     }
 
     this.addPlayer = function(pOrder, playerId) {
       // 플레이어 객체 생성 (플레이어 ID, 플레이어 순서(정수형 배열), 현재 위치)
-      var playerObj = new PlayerInfo(playerId, pOrder, stageCell[0]);
+        this.playerObjList[pOrder-1] = new PlayerInfo(pOrder, playerId, this.stageCell[0], 0);
     }
 
     this.nextPlayer = function () {
@@ -61,7 +64,10 @@ var Player = new (function()
       this.startGame();
     }
 
-    this.startGame = new function () {
-
+    this.startGame = function () {
+      console.log("현재 플레이어 : " + this.playerObjList[this.curPlayerIndex].getPlayerId());
+      console.log("주사위를 굴립니다.");
+      console.log("나온 수 :" + Dice.rollDice());
     }
+
 });
