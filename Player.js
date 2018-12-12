@@ -56,7 +56,7 @@ var Player = new (function()
     }
 
     this.nextPlayer = function () {
-      
+
       if(this.curPlayerIndex == 3)
         this.curPlayerIndex = 0;
       else
