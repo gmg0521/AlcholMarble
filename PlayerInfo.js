@@ -1,4 +1,4 @@
-var PlayerInfo = function(pOrder, playerId, location, alcohol) {
+var PlayerInfo = function(pOrder, playerId,) {
   var _this =  this;
 
   // 플레이어 ID
@@ -6,9 +6,9 @@ var PlayerInfo = function(pOrder, playerId, location, alcohol) {
 
   this.pOrder = pOrder;
 
-  this.location = location;
+  this.location = 1;
 
-  this.alcohol = alcohol;
+  this.alcohol = 0 + "%"";
 
   this.getPlayerId = function ()
   {

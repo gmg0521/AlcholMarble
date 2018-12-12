@@ -52,7 +52,7 @@ var Player = new (function()
 
     this.addPlayer = function(pOrder, playerId) {
       // 플레이어 객체 생성 (플레이어 ID, 플레이어 순서(정수형 배열), 현재 위치)
-        this.playerObjList[pOrder-1] = new PlayerInfo(pOrder, playerId, this.stageCell[0], 0);
+        this.playerObjList[pOrder-1] = new PlayerInfo(pOrder, playerId);
     }
 
     this.nextPlayer = function () {
