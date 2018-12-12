@@ -16,4 +16,6 @@ function playerMove(diceNumber, curPlayer) {
   curPlayer.setLocation(toMovePosition);
 
   console.log(toMovePosition+"칸에 왔습니다!");
+
+  Punishment.showCurPunishment(toMovePosition);
 }
