@@ -2,6 +2,7 @@ var Punishment = new (function () {
   var _this = this;
 
   this.punishmentList = {
+  pun1 : "시작!",
   pun2 : "소주 1잔",
   pun3 : "소주 1병",
   pun4 : "황금열쇠",

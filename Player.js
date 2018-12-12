@@ -15,14 +15,14 @@ var Player = new (function()
     // 현재 플레이어의 인덱스
     this.curPlayerIndex = 0;
 
-    // 스테이지의 발판 생성
-    this.stageCell = new function () {
+    // 스테이지의 발판 생성. 현재 무쓸모??
+    /* this.stageCell = new function () {
       var cell = [];
       for (var i = 0; i < 10; i++) {
         cell[i] = i+1;
       }
       return cell;
-    };
+    }; */
 
     // 게임 초기화
     this.init = function()

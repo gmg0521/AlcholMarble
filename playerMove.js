@@ -12,8 +12,8 @@ var PlayerMove = new (function ()
     console.log("이제 "+diceNumber+"칸 만큼 움직입니다!");
 
     var toMovePosition = curPosition + diceNumber;
-    if (toMovePosition >= 10) {
-      toMovePosition -= 10;
+    if (toMovePosition > 20) {
+      toMovePosition -= 20;
     }
 
     curPlayer.setLocation(toMovePosition);
