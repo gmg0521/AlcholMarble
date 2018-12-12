@@ -1,8 +1,8 @@
 // 나온 주사위 값을 받아서 그 칸 만큼 움직이는 메소드 setPlayPosition 실행
-function playerMove(diceNumber, PlayerInfo.getPlayerId) {
+function playerMove(diceNumber, curPlayer) {
 
-  var curPlayer = PlayerInfo.getPlayerId;
-  var curPosition = Player.curPlayerIndex();
+  var curPlayer = Player.playerObjList[curPlayerIndex].getPlayerId();
+  var curPosition = PlayerInfo.getLocation();
 
   console.log(curPlayer+"플레이어는");
   console.log("현재 "+curPosition+"칸에 있습니다!");
