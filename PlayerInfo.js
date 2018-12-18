@@ -13,6 +13,8 @@ var PlayerInfo = function(pOrder, playerId) {
 
   this.punishmentList = [];
 
+  this.punishmentAlcohol = 0;
+
   this.getPlayerId = function ()
   {
     return this.playerId;

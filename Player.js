@@ -75,7 +75,7 @@ var Player = new (function()
       console.log("나온 수 :" + diceNumber);
       console.log("플레이어를 이동합니다");
       PlayerMove.playerMove(diceNumber); // 플레이어 이동
-      console.log(this.curPlayer.punishmentList);  // 벌칙 기록 보여주기
+      //console.log(this.curPlayer.punishmentList);  // 벌칙 기록 보여주기
       this.nextPlayer();  // 다음 플레이어로
     }
 
