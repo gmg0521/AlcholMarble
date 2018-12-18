@@ -6,7 +6,9 @@ var cFramePosY = canvas.height/2;
 ctx.font ="40px Arial";
 ctx.textAlign = 'center';
 
-var timer = 3000;
+var timer = 30;
+
+var avatarFlag = false;
 
 var Player =
 {
@@ -40,7 +42,7 @@ var Player =
         ctx.fillText("참여 플레이어 수 : 4명.", cFramePosX, cFramePosY);
         console.log("참여 플레이어의 수는 4명");
       }, timer);
-              Player.setPlayer(4);  // 플레이어 수 설정
+      Player.setPlayer(4);  // 플레이어 수 설정
     },
 
     setPlayer : function (cPlayerNum)
@@ -76,26 +78,26 @@ var Player =
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillText("게임을 시작합니다!.", cFramePosX, cFramePosY);
         console.log("게임을 시작합니다!");
-      }, timer*4+1000);
+      }, timer*4+30);
       setTimeout(function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillText("3", cFramePosX, cFramePosY);
         console.log("3");
-      }, timer*4+2000);
+      }, timer*4+60);
       setTimeout(function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillText("2", cFramePosX, cFramePosY);
         console.log("2");
-      }, timer*5);
+      }, timer*5+30);
       setTimeout(function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillText("1", cFramePosX, cFramePosY);
         console.log("1");
-      }, timer*5+1000);
+      }, timer*5+60);
       setTimeout(function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         Player.startGame();
-      }, timer*5+2000);
+      }, timer*5+600);
 
     },
 
@@ -117,6 +119,19 @@ var Player =
 
     startGame : function () {
       var curPlayer = Player.playerObjList[Player.curPlayerIndex]; // 현재 플레이어 객체 임시 저장
+      // 프레임 초기화
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // 플레이어 정보 초기화
+      curPlayer.infoRefresh();
+      //판
+      var imageObj = new Image();
+      imageObj.onload = function() {
+        ctx.drawImage(imageObj, 81, 133, 1086, 466);
+      };
+      imageObj.src = 'img/marble.png';
+      // 아바타 초기 생성이면 init, 아니면 refresh
+      (avatarFlag == false ? Avatar.init() : Avatar.refresh())
+
       console.log("현재 플레이어 : " + curPlayer.getPlayerId());
       console.log("주사위를 굴립니다.");
       var diceNumber = Dice.rollDice(); // 주사위 굴리기

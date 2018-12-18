@@ -30,4 +30,17 @@ var PlayerInfo = function(pOrder, playerId) {
     return this.location;
   }
 
-}
+  this.infoRefresh = function () {
+    ctx.beginPath();
+    ctx.rect(10, 10, 200, 100);
+    ctx.rect(canvas.width-210, 10, 200, 100);
+    ctx.rect(10, canvas.height-110, 200, 100);
+    ctx.rect(canvas.width-210, canvas.height-110, 200, 100);
+    ctx.strokeType = "#FFF000";
+    ctx.fillStyle = "#FFFFFF";
+    ctx.lineWidth = 3;
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+  }
+};
