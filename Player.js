@@ -3,6 +3,10 @@ var Player = new (function()
 
     var _this = this;
 
+    // 캔버스 불러오기
+    this.canvas = document.getElementById("marbleCanvas");
+    this.ctx = this.canvas.getContext("2d");
+
     // 현재 참여하는 플레이어의 수
     this.playerNum = 0;
 
